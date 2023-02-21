@@ -1,6 +1,7 @@
 package com.sg.banking_api.models;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Alert {
     private String alert_id;
@@ -55,5 +56,30 @@ public class Alert {
 
     public void setEmail_address(String email_address) {
         this.email_address = email_address;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Alert alert = (Alert) o;
+        return alert_id.equals(alert.alert_id) && Objects.equals(customer_number, alert.customer_number) && Objects.equals(account_number, alert.account_number) && Objects.equals(when_balance, alert.when_balance) && Objects.equals(account_balance, alert.account_balance) && Objects.equals(email_address, alert.email_address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(alert_id, customer_number, account_number, when_balance, account_balance, email_address);
+    }
+
+    @Override
+    public String toString() {
+        return "Alert{" +
+                "alert_id='" + alert_id + '\'' +
+                ", customer_number='" + customer_number + '\'' +
+                ", account_number='" + account_number + '\'' +
+                ", when_balance=" + when_balance +
+                ", account_balance=" + account_balance +
+                ", email_address='" + email_address + '\'' +
+                '}';
     }
 }

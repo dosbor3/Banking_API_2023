@@ -2,6 +2,7 @@ package com.sg.banking_api.models;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Checking_Trans {
     private String trans_id;
@@ -93,5 +94,34 @@ public class Checking_Trans {
 
     public void setPending_flag(boolean pending_flag) {
         this.pending_flag = pending_flag;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Checking_Trans that = (Checking_Trans) o;
+        return pending_flag == that.pending_flag && trans_id.equals(that.trans_id) && Objects.equals(account_number, that.account_number) && Objects.equals(customer_number, that.customer_number) && Objects.equals(trans_date, that.trans_date) && Objects.equals(deposit_amount, that.deposit_amount) && Objects.equals(withdrawl_amount, that.withdrawl_amount) && Objects.equals(total, that.total) && Objects.equals(check_no, that.check_no) && Objects.equals(image_url, that.image_url);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(trans_id, account_number, customer_number, trans_date, deposit_amount, withdrawl_amount, total, check_no, image_url, pending_flag);
+    }
+
+    @Override
+    public String toString() {
+        return "Checking_Trans{" +
+                "trans_id='" + trans_id + '\'' +
+                ", account_number='" + account_number + '\'' +
+                ", customer_number='" + customer_number + '\'' +
+                ", trans_date=" + trans_date +
+                ", deposit_amount=" + deposit_amount +
+                ", withdrawl_amount=" + withdrawl_amount +
+                ", total=" + total +
+                ", check_no='" + check_no + '\'' +
+                ", image_url='" + image_url + '\'' +
+                ", pending_flag=" + pending_flag +
+                '}';
     }
 }

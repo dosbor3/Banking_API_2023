@@ -1,6 +1,7 @@
 package com.sg.banking_api.models;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Customer {
     private String customer_number;
@@ -92,5 +93,34 @@ public class Customer {
 
     public void setEmail_address(String email_address) {
         this.email_address = email_address;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return isActive == customer.isActive && customer_number.equals(customer.customer_number) && Objects.equals(first_name, customer.first_name) && Objects.equals(last_name, customer.last_name) && Objects.equals(checking_acct_balance, customer.checking_acct_balance) && Objects.equals(savings_acct_balance, customer.savings_acct_balance) && Objects.equals(total_acct_balance, customer.total_acct_balance) && Objects.equals(address, customer.address) && Objects.equals(phone, customer.phone) && Objects.equals(email_address, customer.email_address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(customer_number, first_name, last_name, checking_acct_balance, savings_acct_balance, total_acct_balance, address, isActive, phone, email_address);
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customer_number='" + customer_number + '\'' +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", checking_acct_balance=" + checking_acct_balance +
+                ", savings_acct_balance=" + savings_acct_balance +
+                ", total_acct_balance=" + total_acct_balance +
+                ", address=" + address +
+                ", isActive=" + isActive +
+                ", phone='" + phone + '\'' +
+                ", email_address='" + email_address + '\'' +
+                '}';
     }
 }

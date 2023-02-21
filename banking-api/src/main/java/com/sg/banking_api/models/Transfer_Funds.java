@@ -2,6 +2,7 @@ package com.sg.banking_api.models;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Transfer_Funds {
     private String trans_id;
@@ -67,5 +68,31 @@ public class Transfer_Funds {
 
     public void setTrans_date(LocalDateTime trans_date) {
         this.trans_date = trans_date;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transfer_Funds that = (Transfer_Funds) o;
+        return trans_id.equals(that.trans_id) && Objects.equals(from_account, that.from_account) && Objects.equals(from_cust_number, that.from_cust_number) && Objects.equals(to_account, that.to_account) && Objects.equals(to_cust_number, that.to_cust_number) && Objects.equals(transfer_amount, that.transfer_amount) && Objects.equals(trans_date, that.trans_date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(trans_id, from_account, from_cust_number, to_account, to_cust_number, transfer_amount, trans_date);
+    }
+
+    @Override
+    public String toString() {
+        return "Transfer_Funds{" +
+                "trans_id='" + trans_id + '\'' +
+                ", from_account='" + from_account + '\'' +
+                ", from_cust_number='" + from_cust_number + '\'' +
+                ", to_account='" + to_account + '\'' +
+                ", to_cust_number='" + to_cust_number + '\'' +
+                ", transfer_amount=" + transfer_amount +
+                ", trans_date=" + trans_date +
+                '}';
     }
 }

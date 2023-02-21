@@ -1,5 +1,7 @@
 package com.sg.banking_api.models;
 
+import java.util.Objects;
+
 public class Customer_Address {
     private String customer_number;
     private String Street;
@@ -45,5 +47,29 @@ public class Customer_Address {
 
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer_Address that = (Customer_Address) o;
+        return customer_number.equals(that.customer_number) && Objects.equals(Street, that.Street) && Objects.equals(City, that.City) && Objects.equals(State, that.State) && Objects.equals(zipcode, that.zipcode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(customer_number, Street, City, State, zipcode);
+    }
+
+    @Override
+    public String toString() {
+        return "Customer_Address{" +
+                "customer_number='" + customer_number + '\'' +
+                ", Street='" + Street + '\'' +
+                ", City='" + City + '\'' +
+                ", State='" + State + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                '}';
     }
 }

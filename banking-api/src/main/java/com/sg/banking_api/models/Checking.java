@@ -1,6 +1,7 @@
 package com.sg.banking_api.models;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Checking {
     private String account_number;
@@ -67,4 +68,29 @@ public class Checking {
         this.account_type = account_type;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Checking checking = (Checking) o;
+        return account_number.equals(checking.account_number) && Objects.equals(customer_number, checking.customer_number) && Objects.equals(deposits, checking.deposits) && Objects.equals(withdrawls, checking.withdrawls) && Objects.equals(current_balance, checking.current_balance) && Objects.equals(available_balance, checking.available_balance) && Objects.equals(account_type, checking.account_type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(account_number, customer_number, deposits, withdrawls, current_balance, available_balance, account_type);
+    }
+
+    @Override
+    public String toString() {
+        return "Checking{" +
+                "account_number='" + account_number + '\'' +
+                ", customer_number='" + customer_number + '\'' +
+                ", deposits=" + deposits +
+                ", withdrawls=" + withdrawls +
+                ", current_balance=" + current_balance +
+                ", available_balance=" + available_balance +
+                ", account_type='" + account_type + '\'' +
+                '}';
+    }
 }
