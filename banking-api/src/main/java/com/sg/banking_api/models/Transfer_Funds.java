@@ -12,6 +12,11 @@ public class Transfer_Funds {
     private BigDecimal transfer_amount;
     private LocalDateTime trans_date;
 
+    public Transfer_Funds(String trans_id) {
+        this.trans_id = trans_id;
+        this.trans_date = LocalDateTime.now();
+    }
+
     public String getTrans_id() {
         return trans_id;
     }

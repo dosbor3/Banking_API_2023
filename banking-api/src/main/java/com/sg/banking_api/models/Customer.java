@@ -6,20 +6,20 @@ public class Customer {
     private String customer_number;
     private String first_name;
     private String last_name;
-    private BigDecimal checking_acct_bal;
-    private BigDecimal savings_acct_bal;
-    private BigDecimal total_acct_bal;
+    private BigDecimal checking_acct_balance;
+    private BigDecimal savings_acct_balance;
+    private BigDecimal total_acct_balance;
     private Customer_Address address;
     private boolean isActive;
     private String phone;
     private String email_address;
 
-    public String getCustomer_number() {
-        return customer_number;
+    public Customer(String customer_number) {
+        this.customer_number = customer_number;
     }
 
-    public void setCustomer_number(String customer_number) {
-        this.customer_number = customer_number;
+    public String getCustomer_number() {
+        return customer_number;
     }
 
     public String getFirst_name() {
@@ -38,28 +38,28 @@ public class Customer {
         this.last_name = last_name;
     }
 
-    public BigDecimal getChecking_acct_bal() {
-        return checking_acct_bal;
+    public BigDecimal getChecking_acct_balance() {
+        return checking_acct_balance;
     }
 
-    public void setChecking_acct_bal(BigDecimal checking_acct_bal) {
-        this.checking_acct_bal = checking_acct_bal;
+    public void setChecking_acct_balance(BigDecimal checking_acct_balance) {
+        this.checking_acct_balance = checking_acct_balance;
     }
 
-    public BigDecimal getSavings_acct_bal() {
-        return savings_acct_bal;
+    public BigDecimal getSavings_acct_balance() {
+        return savings_acct_balance;
     }
 
-    public void setSavings_acct_bal(BigDecimal savings_acct_bal) {
-        this.savings_acct_bal = savings_acct_bal;
+    public void setSavings_acct_balance(BigDecimal savings_acct_balance) {
+        this.savings_acct_balance = savings_acct_balance;
     }
 
-    public BigDecimal getTotal_acct_bal() {
-        return total_acct_bal;
+    public BigDecimal getTotal_acct_balance() {
+        return total_acct_balance;
     }
 
-    public void setTotal_acct_bal(BigDecimal total_acct_bal) {
-        this.total_acct_bal = total_acct_bal;
+    public void setTotal_acct_balance(BigDecimal total_acct_balance) {
+        this.total_acct_balance = total_acct_balance;
     }
 
     public Customer_Address getAddress() {

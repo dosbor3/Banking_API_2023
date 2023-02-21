@@ -4,6 +4,10 @@ public class Valid_State {
     private String state_code;
     private String state_name;
 
+    public Valid_State(String state_name) {
+        this.state_name = state_name;
+    }
+
     public String getState_code() {
         return state_code;
     }

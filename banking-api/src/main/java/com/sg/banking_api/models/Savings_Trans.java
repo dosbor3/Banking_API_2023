@@ -13,12 +13,13 @@ public class Savings_Trans {
     private BigDecimal total;
     private boolean pending_flag;
 
-    public String getTrans_id() {
-        return trans_id;
+    public Savings_Trans(String trans_id) {
+        this.trans_id = trans_id;
+        this.trans_date= LocalDateTime.now();
     }
 
-    public void setTrans_id(String trans_id) {
-        this.trans_id = trans_id;
+    public String getTrans_id() {
+        return trans_id;
     }
 
     public String getAccount_number() {

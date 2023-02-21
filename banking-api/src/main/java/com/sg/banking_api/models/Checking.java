@@ -11,12 +11,12 @@ public class Checking {
     private BigDecimal available_balance;
     private String account_type;
 
-    public String getAccount_number() {
-        return account_number;
+    public Checking(String account_number){
+        this.account_number = account_number;
     }
 
-    public void setAccount_number(String account_number) {
-        this.account_number = account_number;
+    public String getAccount_number() {
+        return account_number;
     }
 
     public String getCustomer_number() {

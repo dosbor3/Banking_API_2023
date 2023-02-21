@@ -15,12 +15,12 @@ public class Checking_Trans {
     private String image_url;
     private boolean pending_flag;
 
-    public String getTrans_id() {
-        return trans_id;
+    public Checking_Trans(String trans_id) {
+        this.trans_id = trans_id;
     }
 
-    public void setTrans_id(String trans_id) {
-        this.trans_id = trans_id;
+    public String getTrans_id() {
+        return trans_id;
     }
 
     public String getAccount_number() {

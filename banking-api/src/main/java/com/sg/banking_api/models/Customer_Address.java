@@ -7,12 +7,12 @@ public class Customer_Address {
     private String State;
     private String zipcode;
 
-    public String getCustomer_number() {
-        return customer_number;
+    public Customer_Address(String customer_number) {
+        this.customer_number = customer_number;
     }
 
-    public void setCustomer_number(String customer_number) {
-        this.customer_number = customer_number;
+    public String getCustomer_number() {
+        return customer_number;
     }
 
     public String getStreet() {
