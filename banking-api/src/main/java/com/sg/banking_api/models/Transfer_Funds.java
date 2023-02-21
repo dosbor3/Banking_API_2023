@@ -21,10 +21,6 @@ public class Transfer_Funds {
         return trans_id;
     }
 
-    public void setTrans_id(String trans_id) {
-        this.trans_id = trans_id;
-    }
-
     public String getFrom_account() {
         return from_account;
     }

@@ -4,12 +4,12 @@ public class Valid_Acct_Type {
     private String account_type;
     private String account_description;
 
-    public String getAccount_type() {
-        return account_type;
+    public Valid_Acct_Type(String account_type) {
+        this.account_type = account_type;
     }
 
-    public void setAccount_type(String account_type) {
-        this.account_type = account_type;
+    public String getAccount_type() {
+        return account_type;
     }
 
     public String getAccount_description() {

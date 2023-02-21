@@ -12,10 +12,6 @@ public class Valid_State {
         return state_code;
     }
 
-    public void setState_code(String state_code) {
-        this.state_code = state_code;
-    }
-
     public String getState_name() {
         return state_name;
     }
