@@ -4,22 +4,22 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Customer {
-    private String customer_number;
+    private int customer_number;
     private String first_name;
     private String last_name;
     private BigDecimal checking_acct_balance;
     private BigDecimal savings_acct_balance;
     private BigDecimal total_acct_balance;
-    private Customer_Address address;
+    private Address address;
     private boolean isActive;
     private String phone;
     private String email_address;
 
-    public Customer(String customer_number) {
+    public Customer(int customer_number) {
         this.customer_number = customer_number;
     }
 
-    public String getCustomer_number() {
+    public int getCustomer_number() {
         return customer_number;
     }
 
@@ -46,68 +46,42 @@ public class Customer {
     public void setChecking_acct_balance(BigDecimal checking_acct_balance) {
         this.checking_acct_balance = checking_acct_balance;
     }
-
     public BigDecimal getSavings_acct_balance() {
         return savings_acct_balance;
     }
-
     public void setSavings_acct_balance(BigDecimal savings_acct_balance) {
         this.savings_acct_balance = savings_acct_balance;
     }
-
     public BigDecimal getTotal_acct_balance() {
         return total_acct_balance;
     }
-
     public void setTotal_acct_balance(BigDecimal total_acct_balance) {
         this.total_acct_balance = total_acct_balance;
     }
-
-    public Customer_Address getAddress() {
+    public Address getAddress() {
         return address;
     }
-
-    public void setAddress(Customer_Address address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
-
     public boolean isActive() {
         return isActive;
     }
-
     public void setActive(boolean active) {
         isActive = active;
     }
-
     public String getPhone() {
         return phone;
     }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
     public String getEmail_address() {
         return email_address;
     }
-
     public void setEmail_address(String email_address) {
         this.email_address = email_address;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Customer customer = (Customer) o;
-        return isActive == customer.isActive && customer_number.equals(customer.customer_number) && Objects.equals(first_name, customer.first_name) && Objects.equals(last_name, customer.last_name) && Objects.equals(checking_acct_balance, customer.checking_acct_balance) && Objects.equals(savings_acct_balance, customer.savings_acct_balance) && Objects.equals(total_acct_balance, customer.total_acct_balance) && Objects.equals(address, customer.address) && Objects.equals(phone, customer.phone) && Objects.equals(email_address, customer.email_address);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(customer_number, first_name, last_name, checking_acct_balance, savings_acct_balance, total_acct_balance, address, isActive, phone, email_address);
-    }
-
     @Override
     public String toString() {
         return "Customer{" +

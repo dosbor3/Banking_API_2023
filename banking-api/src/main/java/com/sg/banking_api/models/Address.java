@@ -2,14 +2,14 @@ package com.sg.banking_api.models;
 
 import java.util.Objects;
 
-public class Customer_Address {
+public class Address {
     private String customer_number;
     private String Street;
     private String City;
     private String State;
     private String zipcode;
 
-    public Customer_Address(String customer_number) {
+    public Address(String customer_number) {
         this.customer_number = customer_number;
     }
 
@@ -53,7 +53,7 @@ public class Customer_Address {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Customer_Address that = (Customer_Address) o;
+        Address that = (Address) o;
         return customer_number.equals(that.customer_number) && Objects.equals(Street, that.Street) && Objects.equals(City, that.City) && Objects.equals(State, that.State) && Objects.equals(zipcode, that.zipcode);
     }
 
@@ -64,7 +64,7 @@ public class Customer_Address {
 
     @Override
     public String toString() {
-        return "Customer_Address{" +
+        return "Address{" +
                 "customer_number='" + customer_number + '\'' +
                 ", Street='" + Street + '\'' +
                 ", City='" + City + '\'' +
