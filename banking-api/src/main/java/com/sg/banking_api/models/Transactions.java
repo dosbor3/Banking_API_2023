@@ -8,6 +8,7 @@ public class Transactions {
     private int trans_id;
     private int account_number;
     private int customer_number;
+    private int account_type;
     private LocalDateTime trans_date;
     private BigDecimal deposit_amount;
     private BigDecimal withdrawl_amount;
@@ -17,6 +18,7 @@ public class Transactions {
     public Transactions(int trans_id) {
         this.trans_id = trans_id;
     }
+
 
     public int getTrans_id() {
         return trans_id;
@@ -38,6 +40,10 @@ public class Transactions {
         this.customer_number = customer_number;
     }
 
+    public int getAccount_type() { return account_type; }
+
+    public void setAccount_type(int account_type) { this.account_type = account_type; }
+
     public LocalDateTime getTrans_date() {
         return trans_date;
     }
@@ -57,22 +63,39 @@ public class Transactions {
     public BigDecimal getWithdrawl_amount() {
         return withdrawl_amount;
     }
+
     public void setWithdrawl_amount(BigDecimal withdrawl_amount) {
         this.withdrawl_amount = withdrawl_amount;
     }
+
     public BigDecimal getTotal() {
         return total;
     }
+
     public void setTotal(BigDecimal total) {
         this.total = total;
     }
+
     public boolean isPending_flag() {
         return pending_flag;
     }
+
     public void setPending_flag(boolean pending_flag) {
         this.pending_flag = pending_flag;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transactions that = (Transactions) o;
+        return trans_id == that.trans_id && account_number == that.account_number && customer_number == that.customer_number && account_type == that.account_type && pending_flag == that.pending_flag && Objects.equals(trans_date, that.trans_date) && Objects.equals(deposit_amount, that.deposit_amount) && Objects.equals(withdrawl_amount, that.withdrawl_amount) && Objects.equals(total, that.total);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(trans_id, account_number, customer_number, account_type, trans_date, deposit_amount, withdrawl_amount, total, pending_flag);
+    }
 
     @Override
     public String toString() {

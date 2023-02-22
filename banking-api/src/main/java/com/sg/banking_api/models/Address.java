@@ -3,18 +3,20 @@ package com.sg.banking_api.models;
 import java.util.Objects;
 
 public class Address {
-    private String customer_number;
+    private int address_id;
     private String Street;
     private String City;
     private String State;
     private String zipcode;
 
-    public Address(String customer_number) {
-        this.customer_number = customer_number;
+
+    public Address(int address_id) {
+        this.address_id = address_id;
     }
 
-    public String getCustomer_number() {
-        return customer_number;
+
+    public int getCustomer_number() {
+        return address_id;
     }
 
     public String getStreet() {
@@ -53,19 +55,19 @@ public class Address {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Address that = (Address) o;
-        return customer_number.equals(that.customer_number) && Objects.equals(Street, that.Street) && Objects.equals(City, that.City) && Objects.equals(State, that.State) && Objects.equals(zipcode, that.zipcode);
+        Address address = (Address) o;
+        return address_id == address.address_id && Objects.equals(Street, address.Street) && Objects.equals(City, address.City) && Objects.equals(State, address.State) && Objects.equals(zipcode, address.zipcode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customer_number, Street, City, State, zipcode);
+        return Objects.hash(address_id, Street, City, State, zipcode);
     }
 
     @Override
     public String toString() {
         return "Address{" +
-                "customer_number='" + customer_number + '\'' +
+                "customer_number='" + address_id + '\'' +
                 ", Street='" + Street + '\'' +
                 ", City='" + City + '\'' +
                 ", State='" + State + '\'' +

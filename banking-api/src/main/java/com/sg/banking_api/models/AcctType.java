@@ -1,13 +1,11 @@
 package com.sg.banking_api.models;
 
-import java.util.Objects;
-
-public class Valid_Acct_Type {
+public class AcctType {
     private int account_type_id;
     private String account_type;
     private String account_description;
 
-    public Valid_Acct_Type(int account_type_id) {
+    public AcctType(int account_type_id) {
         this.account_type_id = account_type_id;
     }
     public int getAccount_type_id() { return account_type_id;}

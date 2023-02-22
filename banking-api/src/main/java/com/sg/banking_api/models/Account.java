@@ -1,6 +1,7 @@
 package com.sg.banking_api.models;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Account {
     private int account_number;
@@ -10,9 +11,11 @@ public class Account {
     private int account_type;
     private boolean isActive;
 
+
     public Account(int account_number){
         this.account_number = account_number;
     }
+
 
     public int getAccount_number() {
         return account_number;
@@ -25,6 +28,7 @@ public class Account {
     public void setCustomer_number(int customer_number) {
         this.customer_number = customer_number;
     }
+
     public BigDecimal getCurrent_balance() {
         return current_balance;
     }
@@ -48,12 +52,26 @@ public class Account {
     public void setAccount_type(int account_type) {
         this.account_type = account_type;
     }
+
     public boolean isActive() {
         return isActive;
     }
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return account_number == account.account_number && customer_number == account.customer_number && account_type == account.account_type && isActive == account.isActive && Objects.equals(current_balance, account.current_balance) && Objects.equals(available_balance, account.available_balance);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(account_number, customer_number, current_balance, available_balance, account_type, isActive);
     }
 
     @Override
