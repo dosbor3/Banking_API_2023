@@ -48,6 +48,13 @@ public class Account {
     public void setAccount_type(int account_type) {
         this.account_type = account_type;
     }
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 
     @Override
     public String toString() {

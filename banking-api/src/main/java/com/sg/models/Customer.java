@@ -7,13 +7,10 @@ public class Customer {
     private int customer_number;
     private String first_name;
     private String last_name;
-    private BigDecimal checking_acct_balance;
-    private BigDecimal savings_acct_balance;
-    private BigDecimal total_acct_balance;
     private Address address;
-    private boolean isActive;
     private String phone;
     private String email_address;
+    private boolean isActive;
 
     public Customer(int customer_number) {
         this.customer_number = customer_number;
@@ -37,26 +34,6 @@ public class Customer {
 
     public void setLast_name(String last_name) {
         this.last_name = last_name;
-    }
-
-    public BigDecimal getChecking_acct_balance() {
-        return checking_acct_balance;
-    }
-
-    public void setChecking_acct_balance(BigDecimal checking_acct_balance) {
-        this.checking_acct_balance = checking_acct_balance;
-    }
-    public BigDecimal getSavings_acct_balance() {
-        return savings_acct_balance;
-    }
-    public void setSavings_acct_balance(BigDecimal savings_acct_balance) {
-        this.savings_acct_balance = savings_acct_balance;
-    }
-    public BigDecimal getTotal_acct_balance() {
-        return total_acct_balance;
-    }
-    public void setTotal_acct_balance(BigDecimal total_acct_balance) {
-        this.total_acct_balance = total_acct_balance;
     }
     public Address getAddress() {
         return address;
@@ -88,9 +65,6 @@ public class Customer {
                 "customer_number='" + customer_number + '\'' +
                 ", first_name='" + first_name + '\'' +
                 ", last_name='" + last_name + '\'' +
-                ", checking_acct_balance=" + checking_acct_balance +
-                ", savings_acct_balance=" + savings_acct_balance +
-                ", total_acct_balance=" + total_acct_balance +
                 ", address=" + address +
                 ", isActive=" + isActive +
                 ", phone='" + phone + '\'' +

@@ -12,7 +12,6 @@ public interface AccountDao {
     List<Account> getAllAccounts();
     BigDecimal getAvailableBalance(int account_number);
     BigDecimal getCurrentBalance(int account_number);
-
     void updateChecking(Account account);
     void deleteCheckingByAccountNumber(String account_number);
 
