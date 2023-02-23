@@ -12,11 +12,12 @@ public class Account {
     private boolean isActive;
 
 
-    public Account(int account_number){
-        this.account_number = account_number;
+    public Account(){
+        this.isActive = true;
     }
 
 
+    public void setAccount_number(int account_number) { this.account_number = account_number; }
     public int getAccount_number() {
         return account_number;
     }
